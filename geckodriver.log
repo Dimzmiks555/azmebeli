@@ -1,0 +1,20 @@
+1653027418202	geckodriver	INFO	Listening on 127.0.0.1:49226
+1653027418742	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "49227" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\user\\AppData\\Local\\Temp\\rust_mozprofileMDc8oP"
+1653027437203	geckodriver	INFO	Listening on 127.0.0.1:49392
+1653027437753	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "49393" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\user\\AppData\\Local\\Temp\\rust_mozprofile6RUhr3"
+1653027438245	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\user\\AppData\\Local\\Temp\\rust_mozprofile6RUhr3\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:49393/devtools/browser/9d08e87a-515c-48ae-b63f-b448487af536
+1653027440967	Marionette	INFO	Listening on port 49418
+Read port: 49418
+1653027441034	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://mc.yandex.ru/metrika/watch.js, line 13: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 106: Error: Could not get children of file(C:\Users\user\AppData\Local\Temp\rust_mozprofile6RUhr3\thumbnails) because it does not exist
+1653051379338	Marionette	INFO	Stopped listening on port 49418
+
+###!!! [Parent][RunMessage] Error: Channel error: cannot send/recv
+
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
