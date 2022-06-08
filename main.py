@@ -17,6 +17,7 @@ import eone
 import kvartal
 import lerom_grouped
 import kvartal_grouped
+import svmebel
 from methods.uploadImpexWC import uploadImpexWC
 
 
@@ -156,21 +157,26 @@ if __name__ == "__main__":
     # data_lerom_prihozh_melissa = lerom_grouped.main('http://www.lerom.ru/catalog/melissa-prikh-2021/' ,'Прихожая')
     # data_lerom_detskay_karina = lerom_grouped.main('http://www.lerom.ru/catalog/karina-d/' ,'Детская')
     # data_lerom_detskay_melissa = lerom_grouped.main('http://www.lerom.ru/catalog/melissa-detskaya-2021/' ,'Детская')
-    data_lerom_spal_karina = lerom_grouped.main('http://www.lerom.ru/catalog/karina-sp/' ,'Спальня')
-    data_lerom_spal_melissa = lerom_grouped.main('http://www.lerom.ru/catalog/melissa-2021/' ,'Спальня')
-    data_lerom_gost_melissa = lerom_grouped.main('http://www.lerom.ru/catalog/melissa-gotsinye-2021/' ,'Гостиная')
-    data_lerom_gost_karina = lerom_grouped.main('http://www.lerom.ru/catalog/karina-gost/' ,'Гостиная')
-    data_lerom_gost_kamelia = lerom_grouped.main('http://www.lerom.ru/catalog/kameliya-gost-2021/' ,'Гостиная')
+    # data_lerom_spal_karina = lerom_grouped.main('http://www.lerom.ru/catalog/karina-sp/' ,'Спальня')
+    # data_lerom_spal_melissa = lerom_grouped.main('http://www.lerom.ru/catalog/melissa-2021/' ,'Спальня')
+    # data_lerom_gost_melissa = lerom_grouped.main('http://www.lerom.ru/catalog/melissa-gotsinye-2021/' ,'Гостиная')
+    # data_lerom_gost_karina = lerom_grouped.main('http://www.lerom.ru/catalog/karina-gost/' ,'Гостиная')
+    # data_lerom_gost_kamelia = lerom_grouped.main('http://www.lerom.ru/catalog/kameliya-gost-2021/' ,'Гостиная')
 
     # uploadLeromGroupedWC(data_lerom_prihozh, 829, 920)
     # uploadLeromGroupedWC(data_lerom_prihozh_melissa, 829, 920)
     # uploadLeromGroupedWC(data_lerom_detskay_karina, 993, 992)
     # uploadLeromGroupedWC(data_lerom_detskay_melissa, 993, 992)
-    uploadLeromGroupedWC(data_lerom_spal_karina, 1002, 1001)
-    uploadLeromGroupedWC(data_lerom_spal_melissa, 1002, 1001)
-    uploadLeromGroupedWC(data_lerom_gost_melissa, 1005, 1004)
-    uploadLeromGroupedWC(data_lerom_gost_karina, 1005, 1004)
-    uploadLeromGroupedWC(data_lerom_gost_kamelia, 1005, 1004)
+    # uploadLeromGroupedWC(data_lerom_spal_karina, 1002, 1001)
+    # uploadLeromGroupedWC(data_lerom_spal_melissa, 1002, 1001)
+    # uploadLeromGroupedWC(data_lerom_gost_melissa, 1005, 1004)
+    # uploadLeromGroupedWC(data_lerom_gost_karina, 1005, 1004)
+    # uploadLeromGroupedWC(data_lerom_gost_kamelia, 1005, 1004)
+
+
+
+
+    data_sv_skafi = svmebel.main('https://online.sv-mebel.ru/catalog/shkafy_kupe/kollektsii_6/?region=regional')
 
 
     
