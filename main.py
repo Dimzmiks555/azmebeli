@@ -10,6 +10,7 @@ from methods.uploadKvartalGroupedWC import uploadKvartalGroupedWC
 from methods.uploadKvartalWC import uploadKvartalWC
 from methods.uploadLeromGroupedWC import uploadLeromGroupedWC
 from methods.uploadLeromWC import uploadLeromWC
+from methods.uploadSvWC import uploadSvWC
 import sonberry
 import lerom
 import impex
@@ -177,6 +178,7 @@ if __name__ == "__main__":
 
 
     data_sv_skafi = svmebel.main('https://online.sv-mebel.ru/catalog/shkafy_kupe/kollektsii_6/?region=regional')
+    uploadSvWC(data_sv_skafi, 96)
 
 
     

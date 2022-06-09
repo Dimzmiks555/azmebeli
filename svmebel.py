@@ -4,13 +4,13 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 chrome_options = Options()
-chrome_options.add_argument('disable-infobars')
-chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
-chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
-chrome_options.add_experimental_option('useAutomationExtension', False)
-chrome_options.add_argument('--disable-gpu')
-chrome_options.add_argument("window-size=1920,1080")
-chrome_options.headless = True
+# chrome_options.add_argument('disable-infobars')
+# chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
+# chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
+# chrome_options.add_experimental_option('useAutomationExtension', False)
+# chrome_options.add_argument('--disable-gpu')
+# chrome_options.add_argument("window-size=1920,1080")
+# chrome_options.headless = True
 
 def main(main_url):
 
@@ -29,7 +29,7 @@ def main(main_url):
 
     catalog = driver.find_element_by_class_name('catalog-content__row ')
 
-    cards = catalog.find_element_by_css_selector('.catalog-content__col')
+    cards = catalog.find_elements_by_css_selector('.catalog-content__col')
 
     print(len(cards))
 
@@ -53,7 +53,7 @@ def main(main_url):
 
         catalog = driver.find_element_by_class_name('catalog-content__row ')
 
-        cards = catalog.find_element_by_css_selector('.catalog-content__col')
+        cards = catalog.find_elements_by_css_selector('.catalog-content__col')
 
         for card in cards:
             if not 'no_photo.png' in card.find_element_by_tag_name('img').get_attribute('src'):
@@ -73,24 +73,37 @@ def main(main_url):
 
             attributes = []
             if driver.find_elements_by_css_selector('.product-item-detail-properties'): 
-                tabs_data = driver.find_element_by_css_selector('.product-item-detail-properties').find_element_by_css_selector('.tabs_data')
-
-                tabs_data_divs = tabs_data.find_elements_by_css_selector('div')
+                tabs_data = driver.find_elements_by_css_selector('.product-item-detail-properties')
 
 
-                description = tabs_data_divs[len(tabs_data_divs) - 1].text
 
-                for attrib in tabs_data_divs[0].find_elements_by_css_selector('.clr'):
+                dts = tabs_data[len(tabs_data) - 1].find_elements_by_css_selector('*')
+
+                attr_list = []
+
+                for attrib in dts:
+
+                    attr_list.append(attrib.text)
+
+                for index, attrib in enumerate(attr_list):
+
+                    attr_name = ''
+                    attr_value = ''
+
+                    if index % 2 == 0:
+                        attr_name = attrib.replace(' изделия, мм', '')
+                        print(index)
+                        attr_value = attr_list[index + 1]
+
+                        if attr_name == 'Ширина' or attr_name == 'Высота' or attr_name == 'Глубина':
+                            attr_value = attr_value + ' мм'
+                        if attr_name == 'Вес':
+                            attr_value = attr_value.replace(',','.') + ' кг'
+                        attributes.append({"name": attr_name, "value": attr_value})
                     
-                    attrib_arr = attrib.find_elements_by_css_selector('span')
-                    attr_name = attrib_arr[0].get_attribute("innerText")
-                    attr_value = attrib_arr[1].get_attribute("innerText")
-                    if attr_name == 'Ширина' or attr_name == 'Высота' or attr_name == 'Глубина':
-                        attr_value = attr_value + ' мм'
-                    if attr_name == 'Вес':
-                        attr_value = attr_value.replace(',','.') + ' кг'
+                    
 
-                    attributes.append({"name": attr_name, "value": attr_value})
+                    
 
 
 
@@ -103,7 +116,7 @@ def main(main_url):
             data_info = {
                 "price": price,
                 "title": title,
-                "url": images,
+                "images": images,
                 "attrs": attributes,
                 "description": description,
             }
